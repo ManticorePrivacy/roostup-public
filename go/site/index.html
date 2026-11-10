@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script>
+  // Lien des réseaux (page d'accueil du site) : envoie vers le bon store, avec la source pour savoir d'où viennent les installations.
+  var ua = navigator.userAgent;
+  var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var android = /Android/.test(ua);
+  if (ios) location.replace("https://apps.apple.com/app/apple-store/id6827590943?pt=129686706&ct=site&mt=8");
+  else if (android) location.replace("https://play.google.com/store/apps/details?id=app.roostup&referrer=utm_source%3Dsite%26utm_medium%3Dweb%26utm_campaign%3Daccueil");
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Roost Up · Télécharger</title>
+<style>body{font-family:system-ui,sans-serif;max-width:32rem;margin:3rem auto;padding:0 1rem;color:#1D2424;background:#FAF8F2}a{color:#1D2424;font-weight:600}</style>
+</head>
+<body>
+<main>
+<h1>Roost Up</h1>
+<p>Le réveil qu'on n'éteint qu'en se levant.</p>
+<p><a href="https://play.google.com/store/apps/details?id=app.roostup&referrer=utm_source%3Dsite%26utm_medium%3Dweb%26utm_campaign%3Daccueil">Télécharger sur Google Play</a></p>
+<p><a href="https://apps.apple.com/app/apple-store/id6827590943?pt=129686706&ct=site&mt=8">Télécharger sur l'App Store</a></p>
+</main>
+</body>
+</html>

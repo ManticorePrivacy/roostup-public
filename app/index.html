@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roost Up : le réveil qui ne s'éteint que quand tu te lèves</title>
+<meta name="description" content="Roost Up est une appli de réveil pour iPhone et Android. Pour couper l'alarme, il faut se lever et réussir une mission : pompes, squats, gainage, photo du lit fait. Fini le snooze. 7 jours gratuits.">
+<link rel="canonical" href="https://manticoreprivacy.github.io/roostup-public/app/">
+<link rel="icon" href="img/icone.png">
+<link rel="apple-touch-icon" href="img/icone.png">
+<meta name="theme-color" content="#FFC247">
+<meta name="apple-itunes-app" content="app-id=6827590943, affiliate-data=pt=129686706&ct=site">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Roost Up">
+<meta property="og:title" content="Roost Up : le réveil qui ne s'éteint que quand tu te lèves">
+<meta property="og:description" content="Pour couper l'alarme, il faut se lever et réussir une mission : pompes, squats, gainage, photo du lit fait. Fini le snooze.">
+<meta property="og:url" content="https://manticoreprivacy.github.io/roostup-public/app/">
+<meta property="og:image" content="https://manticoreprivacy.github.io/roostup-public/app/img/partage.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Roost Up",
+  "alternateName": "Roost Up : Alarme réveil sport",
+  "description": "Appli de réveil pour iPhone et Android. L'alarme ne s'éteint que lorsque tu t'es levé et que tu as réussi une mission : pompes, squats, gainage, photo du lit fait, photo du ciel, chasse aux objets ou affirmation à voix haute.",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "iOS, Android",
+  "inLanguage": "fr",
+  "url": "https://manticoreprivacy.github.io/roostup-public/app/",
+  "image": "https://manticoreprivacy.github.io/roostup-public/app/img/icone.png",
+  "installUrl": [
+    "https://apps.apple.com/app/apple-store/id6827590943",
+    "https://play.google.com/store/apps/details?id=app.roostup"
+  ],
+  "author": { "@type": "Organization", "name": "Manticore Studio" },
+  "offers": [
+    { "@type": "Offer", "name": "Forfait annuel, 7 jours gratuits la première fois", "price": "29.99", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Forfait mensuel", "price": "9.99", "priceCurrency": "EUR" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Comment arrêter d'appuyer sur snooze ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Le snooze gagne parce qu'il suffit d'un doigt, les yeux fermés. La solution la plus sûre est de rendre l'arrêt de l'alarme impossible depuis le lit. Roost Up n'a pas de bouton « encore 5 minutes » : l'alarme continue tant que tu n'as pas fait ta mission, debout." } },
+    { "@type": "Question", "name": "Existe-t-il un réveil qu'on éteint en faisant des pompes ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui. Avec Roost Up, tu choisis un nombre de pompes ou de squats, et le téléphone compte chaque répétition avec sa caméra. L'alarme s'éteint à la dernière." } },
+    { "@type": "Question", "name": "Le réveil sonne-t-il si l'appli est fermée ou le téléphone verrouillé ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui. Roost Up sonne même appli fermée et téléphone verrouillé, et un réveil n'a jamais besoin d'Internet." } },
+    { "@type": "Question", "name": "Mes photos et mes vidéos sont-elles envoyées quelque part ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Non. Les images et les sons des missions sont analysés sur le téléphone, puis effacés. Roost Up n'a ni compte ni publicité." } },
+    { "@type": "Question", "name": "Roost Up est-il gratuit ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Roost Up s'essaie gratuitement pendant 7 jours avec le forfait annuel. Ensuite, l'appli s'utilise avec un abonnement : 29,99 € par an ou 9,99 € par mois en France. Il s'arrête à tout moment depuis l'App Store ou Google Play." } },
+    { "@type": "Question", "name": "Sur quels téléphones Roost Up fonctionne-t-il ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sur iPhone, depuis l'App Store, et sur Android, depuis Google Play." } }
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #FAF8F2; --card: #FFFFFF; --text: #1D2424; --muted: #66706E; --line: #DDE0DC;
+  --jaune: #FFC247; --jaune-fonce: #F2A900; --rouge: #F5233C; --tint: #FFF3D6;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #141A1A; --card: #1F2727; --text: #F5F3EC; --muted: #C2C9C6; --line: #344040; --tint: #2B2A20; }
+  h1 em { background: none !important; color: var(--jaune); }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+.page { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+header.haut { display: flex; align-items: center; gap: 10px; padding: 18px 0; font-weight: 800; font-size: 1.2rem; letter-spacing: -.01em; }
+header.haut img { width: 36px; height: 36px; border-radius: 9px; }
+header.haut span span { color: var(--jaune-fonce); }
+
+.hero { display: grid; gap: 28px; align-items: center; padding: 20px 0 48px; }
+h1 { font-size: clamp(2rem, 6.2vw, 3.3rem); line-height: 1.08; letter-spacing: -.025em; margin: 0 0 16px; text-wrap: balance; }
+h1 em { font-style: normal; background: linear-gradient(transparent 62%, var(--jaune) 62%); }
+.accroche { font-size: 1.15rem; color: var(--muted); margin: 0 0 24px; max-width: 34em; }
+.boutons { display: flex; flex-wrap: wrap; gap: 12px; }
+.bouton { display: inline-flex; flex-direction: column; justify-content: center; min-height: 56px; padding: 8px 22px; border-radius: 14px; text-decoration: none; background: var(--jaune); color: #1D2424; font-weight: 700; line-height: 1.2; flex: 1 1 200px; max-width: 280px; }
+.bouton small { font-weight: 500; font-size: .78rem; opacity: .8; }
+.bouton:hover, .bouton:focus-visible { background: var(--jaune-fonce); }
+.bouton.sombre { background: var(--text); color: var(--bg); }
+.bouton.sombre:hover, .bouton.sombre:focus-visible { opacity: .85; background: var(--text); }
+.essai { margin: 16px 0 0; font-size: .95rem; color: var(--muted); }
+.hero figure { margin: 0 auto; max-width: 300px; }
+.capture { border-radius: 22px; box-shadow: 0 8px 30px rgba(29,36,36,.14); }
+
+section { padding: 44px 0; border-top: 1px solid var(--line); }
+h2 { font-size: clamp(1.5rem, 4.2vw, 2rem); line-height: 1.15; letter-spacing: -.02em; margin: 0 0 22px; text-wrap: balance; }
+.etapes { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; counter-reset: etape; }
+.etapes li { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px; counter-increment: etape; }
+.etapes li::before { content: counter(etape); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--jaune); color: #1D2424; font-weight: 800; margin-bottom: 10px; }
+.etapes strong { display: block; font-size: 1.08rem; margin-bottom: 2px; }
+.etapes span { color: var(--muted); }
+
+.galerie { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -16px; padding: 4px 16px 18px; -webkit-overflow-scrolling: touch; }
+.galerie img { flex: 0 0 62%; max-width: 250px; scroll-snap-align: center; border-radius: 18px; box-shadow: 0 4px 16px rgba(29,36,36,.10); }
+
+.missions { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.missions li { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+.missions strong { display: block; }
+.missions span { color: var(--muted); font-size: .95rem; }
+
+.prix { background: var(--tint); border-radius: 22px; padding: 26px 20px; }
+.prix h2 { margin-bottom: 10px; }
+.prix p { margin: 0 0 10px; max-width: 40em; }
+.prix .petit { color: var(--muted); font-size: .93rem; margin: 0; }
+
+details { border-bottom: 1px solid var(--line); padding: 4px 0; }
+summary { cursor: pointer; font-weight: 700; padding: 14px 28px 14px 0; list-style: none; position: relative; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; position: absolute; right: 4px; top: 10px; font-size: 1.4rem; font-weight: 500; color: var(--jaune-fonce); }
+details[open] summary::after { content: "–"; }
+details p { margin: 0 0 16px; color: var(--muted); max-width: 44em; }
+
+.fin { text-align: center; }
+.fin .boutons { justify-content: center; }
+.fin .bouton { text-align: left; }
+footer { border-top: 1px solid var(--line); padding: 26px 0 48px; color: var(--muted); font-size: .93rem; }
+footer p { margin: 0 0 8px; }
+footer a { color: var(--text); }
+
+@media (min-width: 720px) {
+  .hero { grid-template-columns: 1.25fr .75fr; gap: 48px; padding: 36px 0 64px; }
+  .etapes { grid-template-columns: repeat(3, 1fr); }
+  .missions { grid-template-columns: repeat(2, 1fr); }
+  .galerie { overflow: visible; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .galerie img { max-width: none; width: 100%; }
+  .prix { padding: 36px; }
+}
+@media (min-width: 960px) { .missions { grid-template-columns: repeat(4, 1fr); } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="haut">
+  <img src="img/icone.png" alt="" width="36" height="36">
+  <span>Roost <span>Up</span></span>
+</header>
+
+<main>
+<div class="hero">
+  <div>
+    <h1>Le réveil qui ne s'éteint que quand tu <em>te lèves</em></h1>
+    <p class="accroche">Pour couper l'alarme, il faut sortir du lit et réussir une mission : des pompes, des squats, ton lit fait en photo. Fini le snooze.</p>
+    <div class="boutons">
+      <a class="bouton" href="../go/site/">Télécharger Roost Up<small>iPhone et Android</small></a>
+    </div>
+    <p class="essai">7 jours gratuits, puis abonnement.</p>
+  </div>
+  <figure>
+    <img class="capture" src="img/pompes.webp" width="600" height="1304" alt="L'écran de la mission pompes de Roost Up : la caméra compte 11 pompes sur 15 pendant que le réveil sonne.">
+  </figure>
+</div>
+
+<section>
+  <h2>Comment ça marche</h2>
+  <ol class="etapes">
+    <li><strong>Tu règles ton réveil</strong><span>L'heure, les jours de la semaine, la sonnerie, et la mission qui l'éteindra.</span></li>
+    <li><strong>Il sonne, et il insiste</strong><span>Même appli fermée et téléphone verrouillé. Pas de bouton « encore 5 minutes ».</span></li>
+    <li><strong>Tu fais ta mission, debout</strong><span>L'alarme s'arrête quand la mission est réussie. Ton corps est réveillé, ta journée commence.</span></li>
+  </ol>
+</section>
+
+<section>
+  <h2>À quoi ça ressemble</h2>
+  <div class="galerie">
+    <img src="img/sonnerie.webp" width="600" height="1304" loading="lazy" alt="Le réveil de 6 h 45 sonne, avec la mission du jour : 15 pompes.">
+    <img src="img/reveils.webp" width="600" height="1304" loading="lazy" alt="La liste des réveils, chacun avec son heure, ses jours et sa mission.">
+    <img src="img/missions.webp" width="600" height="1304" loading="lazy" alt="Le choix de la mission : pompes, squats, gainage, affirmation.">
+    <img src="img/affirmation.webp" width="600" height="1304" loading="lazy" alt="La mission affirmation : une phrase à dire à voix haute trois fois.">
+    <img src="img/bien-joue.webp" width="600" height="1304" loading="lazy" alt="L'écran « Bien joué ! » après un réveil réussi, avec une série de 28 jours d'affilée.">
+  </div>
+</section>
+
+<section>
+  <h2>La mission qui éteint ton alarme</h2>
+  <ul class="missions">
+    <li><strong>Pompes</strong><span>Le téléphone compte chaque répétition avec la caméra.</span></li>
+    <li><strong>Squats</strong><span>Comptés par la caméra, eux aussi.</span></li>
+    <li><strong>Gainage</strong><span>Tiens la planche jusqu'au bout du chrono.</span></li>
+    <li><strong>Fais ton lit</strong><span>Montre ton lit fait en photo.</span></li>
+    <li><strong>Photo d'un endroit</strong><span>Va photographier un endroit loin de ton lit.</span></li>
+    <li><strong>Chasse aux objets</strong><span>Trouve et photographie un objet tiré au hasard.</span></li>
+    <li><strong>Photo du ciel</strong><span>Photographie le ciel du matin.</span></li>
+    <li><strong>Affirmation</strong><span>Dis une phrase positive à voix haute.</span></li>
+  </ul>
+</section>
+
+<section>
+  <div class="prix">
+    <h2>7 jours gratuits, puis abonnement</h2>
+    <p>Le forfait annuel commence par 7 jours gratuits. Ensuite, Roost Up coûte <strong>29,99 € par an</strong>, ou <strong>9,99 € par mois</strong> avec le forfait mensuel (prix en France).</p>
+    <p class="petit">Le paiement passe par l'App Store ou Google Play, et l'abonnement s'arrête à tout moment depuis ton compte. Pas de compte à créer, pas de publicité.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Questions fréquentes</h2>
+  <details>
+    <summary>Comment arrêter d'appuyer sur snooze ?</summary>
+    <p>Le snooze gagne parce qu'il suffit d'un doigt, les yeux fermés. La solution la plus sûre est de rendre l'arrêt de l'alarme impossible depuis le lit. Roost Up n'a pas de bouton « encore 5 minutes » : l'alarme continue tant que tu n'as pas fait ta mission, debout.</p>
+  </details>
+  <details>
+    <summary>Existe-t-il un réveil qu'on éteint en faisant des pompes ?</summary>
+    <p>Oui. Avec Roost Up, tu choisis un nombre de pompes ou de squats, et le téléphone compte chaque répétition avec sa caméra. L'alarme s'éteint à la dernière.</p>
+  </details>
+  <details>
+    <summary>Le réveil sonne-t-il si l'appli est fermée ou le téléphone verrouillé ?</summary>
+    <p>Oui. Roost Up sonne même appli fermée et téléphone verrouillé, et un réveil n'a jamais besoin d'Internet.</p>
+  </details>
+  <details>
+    <summary>Mes photos et mes vidéos sont-elles envoyées quelque part ?</summary>
+    <p>Non. Les images et les sons des missions sont analysés sur le téléphone, puis effacés. Roost Up n'a ni compte ni publicité. Le détail est dans la <a href="../">politique de confidentialité</a>.</p>
+  </details>
+  <details>
+    <summary>Roost Up est-il gratuit ?</summary>
+    <p>Roost Up s'essaie gratuitement pendant 7 jours avec le forfait annuel. Ensuite, l'appli s'utilise avec un abonnement : 29,99 € par an ou 9,99 € par mois en France. Il s'arrête à tout moment depuis l'App Store ou Google Play.</p>
+  </details>
+  <details>
+    <summary>Sur quels téléphones Roost Up fonctionne-t-il ?</summary>
+    <p>Sur iPhone, depuis l'App Store, et sur Android, depuis Google Play.</p>
+  </details>
+</section>
+
+<section class="fin">
+  <h2>Demain matin, <span style="white-space:nowrap">lève-toi</span> du premier coup</h2>
+  <div class="boutons">
+    <a class="bouton" href="../go/site/">Télécharger Roost Up<small>iPhone et Android</small></a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>Roost Up est édité par Manticore Studio. Une question ? <a href="mailto:contact.manticore+roostup@gmail.com">contact.manticore+roostup@gmail.com</a></p>
+  <p><a href="../">Confidentialité</a> · <a href="../conditions.html">Conditions d'utilisation</a> · <a href="../assistance.html">Assistance</a></p>
+</footer>
+
+</div>
+</body>
+</html>
