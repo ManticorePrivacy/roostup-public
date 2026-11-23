@@ -24,16 +24,21 @@
       };
       for (var k in plus) p[k] = plus[k];
       var corps = JSON.stringify({ api_key: "phc_BHe9jqJNhZwNexzTnLoHrUSvzDfvzX2J7Fadk9eUTG8E", event: evenement, distinct_id: "pub-" + visite, properties: p });
-      if (!(navigator.sendBeacon && navigator.sendBeacon("https://eu.i.posthog.com/i/v0/e/", corps))) {
-        fetch("https://eu.i.posthog.com/i/v0/e/", { method: "POST", body: corps, keepalive: true, mode: "no-cors" });
-      }
-    } catch (e) {}
+      return fetch("https://eu.i.posthog.com/i/v0/e/", { method: "POST", body: corps, keepalive: true, mode: "no-cors" });
+    } catch (e) { return Promise.resolve(); }
   }
-  compte("pub_page_vue", { redirection: ios ? "app-store" : android ? "play-store" : "aucune" });
+  // Part vers le store dès que le passage est envoyé (au plus 0,6 s) : partir tout de suite coupait l'envoi.
+  var parti = false;
+  function vaAuStore() {
+    if (parti) return;
+    parti = true;
+    if (ios) location.replace(appStore);
+    else if (android) location.replace(playStore);
+  }
+  compte("pub_page_vue", { redirection: ios ? "app-store" : android ? "play-store" : "aucune" }).then(vaAuStore, vaAuStore);
+  setTimeout(vaAuStore, 600);
   // Toujours là après 3 s : la redirection n'a pas emmené la personne vers le store.
   setTimeout(function () { if (document.visibilityState === "visible") compte("pub_page_toujours_la", {}); }, 3000);
-  if (ios) location.replace(appStore);
-  else if (android) location.replace(playStore);
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
