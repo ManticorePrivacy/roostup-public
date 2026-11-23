@@ -4,11 +4,36 @@
 <meta charset="utf-8">
 <script>
   // Lien de la pub TikTok « hum » (premier test payé, novembre 2026) : envoie vers le bon store, avec la source pour savoir d'où viennent les installations.
+  // Compteur : chaque passage part chez PostHog (Europe), sans cookie ni profil, avec un numéro tiré au hasard à chaque visite.
+  var PUB = "hum";
   var ua = navigator.userAgent;
   var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
   var android = /Android/.test(ua);
-  if (ios) location.replace("https://apps.apple.com/app/apple-store/id6827590943?pt=129686706&ct=pub-hum&mt=8");
-  else if (android) location.replace("https://play.google.com/store/apps/details?id=app.roostup&referrer=utm_source%3Dtiktok-ads%26utm_medium%3Dpaid%26utm_campaign%3Dhum");
+  var appStore = "https://apps.apple.com/app/apple-store/id6827590943?pt=129686706&ct=pub-hum&mt=8";
+  var playStore = "https://play.google.com/store/apps/details?id=app.roostup&referrer=utm_source%3Dtiktok-ads%26utm_medium%3Dpaid%26utm_campaign%3Dhum";
+  var visite = Date.now().toString(36) + Math.random().toString(36).slice(2);
+  function compte(evenement, plus) {
+    try {
+      var p = {
+        $process_person_profile: false,
+        pub: PUB,
+        systeme: ios ? "ios" : android ? "android" : "autre",
+        dans_tiktok: /musical_ly|BytedanceWebview|TikTok|trill_/i.test(ua),
+        navigateur: ua,
+        source: new URLSearchParams(location.search).get("utm_source") || ""
+      };
+      for (var k in plus) p[k] = plus[k];
+      var corps = JSON.stringify({ api_key: "phc_BHe9jqJNhZwNexzTnLoHrUSvzDfvzX2J7Fadk9eUTG8E", event: evenement, distinct_id: "pub-" + visite, properties: p });
+      if (!(navigator.sendBeacon && navigator.sendBeacon("https://eu.i.posthog.com/i/v0/e/", corps))) {
+        fetch("https://eu.i.posthog.com/i/v0/e/", { method: "POST", body: corps, keepalive: true, mode: "no-cors" });
+      }
+    } catch (e) {}
+  }
+  compte("pub_page_vue", { redirection: ios ? "app-store" : android ? "play-store" : "aucune" });
+  // Toujours là après 3 s : la redirection n'a pas emmené la personne vers le store.
+  setTimeout(function () { if (document.visibilityState === "visible") compte("pub_page_toujours_la", {}); }, 3000);
+  if (ios) location.replace(appStore);
+  else if (android) location.replace(playStore);
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -19,8 +44,8 @@
 <main>
 <h1>Roost Up</h1>
 <p>Le réveil qu'on n'éteint qu'en se levant.</p>
-<p><a href="https://play.google.com/store/apps/details?id=app.roostup&referrer=utm_source%3Dtiktok-ads%26utm_medium%3Dpaid%26utm_campaign%3Dhum">Télécharger sur Google Play</a></p>
-<p><a href="https://apps.apple.com/app/apple-store/id6827590943?pt=129686706&ct=pub-hum&mt=8">Télécharger sur l'App Store</a></p>
+<p><a href="https://play.google.com/store/apps/details?id=app.roostup&referrer=utm_source%3Dtiktok-ads%26utm_medium%3Dpaid%26utm_campaign%3Dhum" onclick="compte('pub_bouton_store', { store: 'play-store' })">Télécharger sur Google Play</a></p>
+<p><a href="https://apps.apple.com/app/apple-store/id6827590943?pt=129686706&ct=pub-hum&mt=8" onclick="compte('pub_bouton_store', { store: 'app-store' })">Télécharger sur l'App Store</a></p>
 </main>
 </body>
 </html>
